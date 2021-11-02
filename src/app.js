@@ -59,7 +59,7 @@ function fieldDel(event) {
  * @return {Object}
  */
 function getRequestParams() {
-    return $('#usagi-request-data').val();
+    return JSON.parse($('#usagi-request-data').val());
 }
 
 /**
@@ -76,7 +76,7 @@ function getRequestData() {
     obj.method = $("#usagi-request-method").val();
     obj.data = getRequestParams();
 
-    data.push(JSON.stringify(obj));
+    data.push((obj));
     return JSON.stringify(obj);
 }
 
